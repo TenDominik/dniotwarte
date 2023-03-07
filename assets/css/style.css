@@ -80,8 +80,8 @@ body{
 }
 @font-face{
   font-family:Refault;
-  src:url(https://0110-2a02-a315-4345-2480-d94e-bf1a-1ec2-7f60.eu.ngrok.io/dniotwarte/dniotwarte/assets/fonts/REFAULT.eot);
-  src:url(https://0110-2a02-a315-4345-2480-d94e-bf1a-1ec2-7f60.eu.ngrok.io/dniotwarte/dniotwarte/assets/fonts/REFAULT.eot?#iefix) format('embedded-opentype'),url(https://0110-2a02-a315-4345-2480-d94e-bf1a-1ec2-7f60.eu.ngrok.io/dniotwarte/dniotwarte/assets/fonts/REFAULT.woff) format('woff'),url(https://0110-2a02-a315-4345-2480-d94e-bf1a-1ec2-7f60.eu.ngrok.io/dniotwarte/dniotwarte/assets/fonts/REFAULT.woff2) format('woff2'),url(https://0110-2a02-a315-4345-2480-d94e-bf1a-1ec2-7f60.eu.ngrok.io/dniotwarte/dniotwarte/assets/fonts/REFAULT.ttf) format('truetype');
+  src:url(../fonts/REFAULT.ttf);
+  src:url(../fonts/REFAULT.eot) format('embedded-opentype'),url(../fonts/REFAULT.woff) format('woff'),url(../fonts/REFAULT.woff2) format('woff2'),url(../fonts/REFAULT.ttf) format('truetype');
   font-style:italic;
   font-weight:400;
   text-rendering:optimizeLegibility
@@ -212,7 +212,7 @@ body{
   transition:var(--transition-2)
 }
 .hero{
-  background:url(https://0110-2a02-a315-4345-2480-d94e-bf1a-1ec2-7f60.eu.ngrok.io/dniotwarte/dniotwarte/assets/images/rcez.jpg) no-repeat;
+  background:url(../images/rcez.jpg) no-repeat;
   background-size:cover;
   background-position:top center;
   margin-top:90px;
