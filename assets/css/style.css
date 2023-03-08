@@ -1,5 +1,5 @@
 :root{
-  --raisin-black-1:hsl(234, 14%, 14%);
+  --raisin-black-1:hwb(233 12% 85%);
   --raisin-black-2:hsl(231, 12%, 12%);
   --raisin-black-3:hsl(228, 12%, 17%);
   --eerie-black:hsl(240, 11%, 9%);
@@ -66,7 +66,6 @@ html{
 }
 body{
   overflow-x:hidden;
-  background-color:var(--blue)
 }
 ::-webkit-scrollbar{
   width:8px
@@ -163,7 +162,6 @@ body{
   box-shadow:0 3px 27px hsla(0,0%,0%,.5);
   padding-block:20px;
   z-index:4,
-  
 }
 .header .container{
   display:flex;
@@ -252,77 +250,11 @@ body{
   background-size:cover;
   background-position:center
 }
-.about{
-  background:url(https://0110-2a02-a315-4345-2480-d94e-bf1a-1ec2-7f60.eu.ngrok.io/dniotwarte/dniotwarte/assets/images/about-img-shadow.png) no-repeat;
-  background-size:100%;
-  background-position:center;
-  padding:120px 0 var(--section-padding)
-}
-.about-img{
-  width:100%
-}
+
 .character{
   display:none
 }
-.about-content{
-  background:var(--raisin-black-1);
-  color:var(--white);
-  padding:40px 20px;
-  border-radius:4px;
-  box-shadow:0 2px 4px hsla(0,0%,0%,.2)
-}
-.about-subtitle{
-  color:var(--blue);
-  font-family:var(--ff-oswald);
-  font-size:var(--fs-8);
-  font-weight:var(--fw-500);
-  text-transform:uppercase;
-  margin-bottom:15px
-}
-.about-title{
-  font-family:var(--ff-oswald);
-  font-size:var(--fs-2);
-  line-height:1.2;
-  text-transform:uppercase;
-  margin-bottom:20px
-}
-.about-text{
-  color:var(--light-gray);
-  font-size:var(--fs-9);
-  line-height:1.8;
-  letter-spacing:.5px
-}
-.about-text{
-  margin-bottom:20px
-}
-.tournament{
-  padding:var(--section-padding) 0;
-  color:var(--white);
-  text-align:center
-}
-.tournament-content{
-  margin-bottom:50px
-}
-.tournament-subtitle{
-  color:var(--blue);
-  font-family:var(--ff-oswald);
-  font-weight:var(--fw-500);
-  text-transform:uppercase;
-  margin-bottom:10px
-}
-.tournament-title{
-  margin-bottom:20px
-}
-.tournament-text{
-  color:var(--light-gray);
-  font-size:var(--fs-9);
-  line-height:1.8;
-  margin-bottom:30px
-}
-.tournament .btn-primary{
-  width:max-content;
-  margin-inline:auto
-}
+
 .team{
   padding:var(--section-padding) 0
 }
@@ -408,13 +340,7 @@ body{
       max-width:150px;
       z-index:-1
   }
-  .about-content{
-      padding:60px 40px
-  }
-  .tournament-text{
-      max-width:500px;
-      margin-inline:auto
-  }
+  
 }
 @media (min-width:768px){
   :root{
@@ -510,34 +436,9 @@ body{
   .overlay{
       display:none
   }
-  .about{
-      padding-top:200px
+  
   }
-  .about-content{
-      max-width:700px;
-      margin-inline:auto
-  }
-  .tournament{
-      --fs-2:30px;
-      --fs-3:30px;
-      --fs-6:16px;
-      text-align:left
-  }
-  .tournament .container{
-      display:flex;
-      justify-content:space-between;
-      align-items:center
-  }
-  .tournament-content{
-      margin-bottom:0
-  }
-  .tournament-content{
-      max-width:310px
-  }
-  .tournament .btn-primary{
-      margin-inline:0
-  }
-}
+  
 @media (min-width:1200px){
   :root{
       --fs-1:150px
@@ -551,26 +452,12 @@ body{
   .hero{
       margin-top:110px
   }
-  .about{
-      background-size:55%;
-      background-position:90% center
-  }
-  .about .container{
-      display:flex;
-      flex-direction:row-reverse;
-      justify-content:space-between;
-      align-items:center;
-      gap:100px;
-      padding-right:110px
-  }
+  
   .character-2{
       left:155px;
       top:70px
   }
-  .about-content{
-      max-width:600px;
-      margin-inline:0
-  }
+  
   .team-list{
       gap:20px
   }
@@ -639,11 +526,23 @@ body{
 .about
 {
   text-align: center;
+  margin-bottom: 50px;
 }
+.about .card
+{
+  padding: 10px;
+  border-bottom:2px solid black;
+  border-radius: 15px;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+}
+
 
 .karty_h1
 {
-  margin:50px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color:white;
+  border-radius: 15px;
+  margin-top:50px;
   font-size: 35px;
 }
 
@@ -713,12 +612,12 @@ body{
 .wrapper::after {
   bottom: 0;
   opacity: 1;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to bottom,
     transparent 46%,
     rgba(12, 13, 19, 0.5) 68%,
     rgba(12, 13, 19) 97%
-  );
+  ); */
 }
 
 .card:hover .wrapper::before,
@@ -739,9 +638,9 @@ body{
 
 .character {
   width: 100%;
-  opacity: 0;
   transition: all 0.5s;
   position: absolute;
+  opacity: 0;
   z-index: -1;
 }
 
@@ -753,7 +652,6 @@ body{
 /*----------------KARTY-----------------*/
 
 .bialetlo{
-  background-color:#fff;
   -webkit-box-shadow:0 0 58px 31px rgba(255,255,255,1);
   -moz-box-shadow:0 0 58px 31px rgba(255,255,255,1);
   box-shadow:0 0 58px 31px rgba(255,255,255,1)
@@ -770,3 +668,108 @@ body{
   text-transform:uppercase;
   margin-top: 2%;
 }
+
+.tournament
+{
+  display:flex;
+  flex-wrap: nowrap;
+  background-color: white;
+}
+
+#tournament_prawy
+{
+  width:auto;
+  margin :15px;
+  padding:15px;
+  color:white;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius:25px;
+}
+#tournament_prawy h2
+{
+  margin-bottom:25px;
+  text-align: center;
+}
+
+#tournament_lewy {
+  width: 45%;
+}
+
+.trapdoor
+{
+  padding: 15px;
+  height: 300px;
+  border-radius: 40px;
+}
+
+.zalety {
+  display: flex;
+}
+
+.zalety_prawy {
+  width: 60%;
+  background-color: rgba(0, 0, 255, 0.7);
+  border-radius: 25px;
+  padding: 15px;
+  margin: 15px 100px 15px 15px;
+  color: white;
+}
+
+.zalety_prawy h2 {
+  text-align:center;
+  margin-bottom: 25px;
+}
+
+.zalety_lewy {
+  width: 40%;
+}
+
+#zarobki
+{
+  margin:0 auto;
+  text-align: center;
+}
+
+#zarobki h3
+{
+  background-color: rgba(0, 0, 0, 0.8);
+  color:white;
+  padding:3px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+#zarobki img
+{
+  margin:0 auto;
+  margin-bottom: 175px;
+}
+
+footer
+{
+  background-color: var(--blue);
+  color:rgb(255, 255, 255);
+  padding:3px;
+  text-align: center;
+}
+
+
+/* @keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+* {  
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+} */
+
+/* section {
+  animation: fadein 0.5s;
+}
+@keyframes fadein {
+  from { opacity: 0}
+  to   { opacity: 1}
+} */
