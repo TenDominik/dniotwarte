@@ -188,6 +188,8 @@ body{
   padding:25px
 }
 .navbar-list{
+  position: relative;
+  left: 20%;
   border-top:1px solid hsla(0,0%,100%,.1);
   margin-bottom:30px
 }
@@ -548,7 +550,8 @@ body{
 
 :root {
   --card-height: 300px;
-  --card-width: calc(var(--card-height) / 1.5);
+  /* --card-width: calc(var(--card-height) / 1.5); */
+  --card-width: 200px;
 }
 
 .karcioszki{
@@ -662,11 +665,12 @@ body{
   border-radius:20px
 }
 .rcez{
+  position: absolute;
   color:var(--white);
   font-family:var(--ff-refault);
   font-size: 40px;
   text-transform:uppercase;
-  margin-top: 2%;
+  margin-top: 1%;
   white-space: nowrap;
   margin-right: 40px;
 }
@@ -754,6 +758,9 @@ footer
   text-align: center;
 }
 .logowhite{
+  position: absolute;
+  left: 6%;
+  bottom: 3%;
   width: 140px;
   height: 100px;
   margin-right: 40px;
@@ -771,7 +778,7 @@ footer
 
 * {  
   animation: 1s ease-out 0s 1 slideInFromLeft;
-} */
+}  */
 
 /* section {
   animation: fadein 0.5s;
