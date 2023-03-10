@@ -82,7 +82,7 @@ export default function App() {
               </form>
             </div>
             {showPallet && <CommandPallet setShowPallet={setShowPallet} />}
-            {timer ? <Test /> : <Result />}
+            {timer ? <Test /> : <React.Fragment><Result /> </React.Fragment> }
             <Footer />
         </>
     );
