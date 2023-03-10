@@ -2,6 +2,8 @@ import { resetTest } from "helpers/resetTest";
 import { useSelector } from "react-redux";
 import { State } from "store/reducer";
 import "stylesheets/Result.scss";
+import React, { useState } from "react";
+import axios from 'axios';
 export default function Result() {
     const {
         word: { wordList, typedHistory, currWord },
@@ -12,9 +14,27 @@ export default function Result() {
     const result = typedHistory.map(
         (typedWord, idx) => typedWord === wordList[idx]
     );
+    const searchInput = React.useRef(null)
     result.forEach((r, idx) => {
         if (r) correctChars += wordList[idx].length;
     });
+    const [text, setText] = useState('');
+    const [response, setResponse] = useState('');
+
+    function handleTextChange(event: { target: { value: React.SetStateAction<string>; }; }) {
+        setText(event.target.value);
+    }
+
+  function handleSubmit(event: { preventDefault: () => void; }) {
+    event.preventDefault();
+    axios.post('server.php', { text })
+      .then(response => {
+        setResponse(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
     const wpm = ((correctChars + spaces) * 60) / timeLimit / 5;
     return (
         <div className="result">

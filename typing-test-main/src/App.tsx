@@ -19,19 +19,18 @@ export default function App() {
     } = useSelector((state: State) => state);
     const dispatch = useDispatch();
     const [showPallet, setShowPallet] = useState(false);
-
+    const searchInput = React.useRef(null)
     useEffect(() => {
         document.onkeydown = (e) => {
-            // if(document.activeElement === searchInput.current){
-
-            // }
-            if (e.ctrlKey && e.key === "k") {
-                setShowPallet((s) => !s);
-                e.preventDefault();
-            } else if (e.key.length === 1 ||e.key === "Backspace" ||e.key === "Tab") {
-                recordTest(e.key, e.ctrlKey);
-                e.preventDefault();
-            }  
+            if(document.activeElement !== searchInput.current){
+                if (e.ctrlKey && e.key === "k") {
+                    setShowPallet((s) => !s);
+                    e.preventDefault();
+                } else if (e.key.length === 1 ||e.key === "Backspace" ||e.key === "Tab") {
+                    recordTest(e.key, e.ctrlKey);
+                    e.preventDefault();
+                }
+            }
         };
         return () => {
             document.onkeydown = null;
@@ -63,28 +62,16 @@ export default function App() {
     }, [dispatch, timer, timerId]);
     const [text, setText] = useState('');
     const [response, setResponse] = useState('');
-    const searchInput = React.useRef(null)
     function handleTextChange(event: { target: { value: React.SetStateAction<string>; }; }) {
         setText(event.target.value);
-      }
-  
-      function handleSubmit(event: { preventDefault: () => void; }) {
-        event.preventDefault();
-        axios.post('server.php', { text })
-          .then(response => {
-            setResponse(response.data);
-          })
-          .catch(error => {
-            console.log(error);
-          });
       }
 
     return (
         <>
             <Header />
             <div>
-              <form onSubmit={handleSubmit}>
-                <label htmlFor="input-text">Input Text:</label>
+              <form>
+                <label htmlFor="input-text">Nazwa:   </label>
                 <input
                   id="input-text"
                   type="text"
@@ -92,9 +79,7 @@ export default function App() {
                   ref={searchInput}
                   onChange={handleTextChange}
                 />
-                <button type="submit">Send</button>
               </form>
-              <p>Response: {response}</p>
             </div>
             {showPallet && <CommandPallet setShowPallet={setShowPallet} />}
             {timer ? <Test /> : <Result />}
@@ -102,3 +87,4 @@ export default function App() {
         </>
     );
 }
+

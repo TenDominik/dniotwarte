@@ -12,8 +12,13 @@ genFood();
 
 document.addEventListener("keydown", zmienKierunek);
 document.querySelector(".start-btn").addEventListener("click", gameplay);
+
 document.querySelector(".reset-btn").addEventListener("click", () => {
     window.location.reload();
+});
+
+document.querySelector(".back").addEventListener("click", () => {
+    window.location.href="../gry.html";
 });
 
 function gameplay() {
@@ -75,10 +80,13 @@ function koniec() {
             return true;
     }
 
-    return snake[0].x < 0 
-    || snake[0].x > plansza.width - 10 
-    || snake[0].y < 0 
-    || snake[0].y > plansza.height - 10;
+    if( snake[0].x < 0 || snake[0].x > plansza.width - 10 || snake[0].y < 0 || snake[0].y > plansza.height - 10) {
+        planszaContext.fillStyle = "red";
+        planszaContext.strokeStyle = "black";
+        planszaContext.fillRect(0, 0, plansza.width, plansza.height);
+        planszaContext.strokeRect(0, 0, plansza.width, plansza.height);
+        return false;
+    }
 }
 
 function zmienKierunek(k) {
@@ -111,8 +119,11 @@ function moveSnake() {
     snake.unshift(glowa);
     if(snake[0].x === jablko_x && snake[0].y === jablko_y) {
         genFood();
+        wynik+=1;
     }
 
     else
         snake.pop();
+
+    document.querySelector(".wynik").innerText = `${wynik}`;
 }

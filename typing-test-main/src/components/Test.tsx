@@ -13,6 +13,12 @@ export default function Test() {
     const extraLetters = typedWord.slice(currWord.length).split("");
     const activeWord = useRef<HTMLDivElement>(null);
     const caretRef = useRef<HTMLSpanElement>(null);
+
+    useEffect(() => {
+        dispatch(setRef(activeWord));
+        dispatch(setCaretRef(caretRef));
+    }, [dispatch]);
+
     return (
         <div className="test">
             <div className="timer">{timer}</div>
