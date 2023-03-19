@@ -22,14 +22,54 @@ body {
 
 .main
 {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display: block;
     background-color: rgba(0, 0, 0,0.8);
     width: 75%;
     height:75%;
     border-radius: 25px;
+}
+#main_top
+{
+    font-size: 25px;
+    text-align: center;
+    padding-top:10px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;;
+}
+#main_mid
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height:670px;
+}
+
+#main_bot
+{
+    margin:5px;
+    text-align: center;
+}
+#main_bot p
+{
+    color:white;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(21, 31, 172);
+    font-size: 20px;
+    text-decoration: none;
+    width: 200px;
+    margin-left: 600px;
+    transition: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+#main_bot p:hover
+{
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.404);
+    background-color: blue;
+    width:500px;
+    margin-left: 450px;
 }
 
 figure
@@ -70,4 +110,5 @@ figcaption
     font-size: 20px;
     margin-bottom: 5px;
     margin-top: 15%;
+    text-decoration: none;
 }
