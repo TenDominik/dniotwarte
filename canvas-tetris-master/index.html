@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tetris</title>
+        <link rel='stylesheet' href='style.css' />
+    </head>
+    <body>
+        <audio id="clearsound" src="sound/pop.ogg" preload="auto"></audio>
+        <canvas width='300' height='600'></canvas>
+        <seciton id="cos">
+            <seciton class="gusiory">
+                <button id="playbutton" onclick="playButtonClicked();">Graj</button>
+                <a id="powrot" href="../gry.html"><p>Wróć do gier</p></a>
+            </seciton>
+            <section id="wyniczek">
+                <p id="wynik">Twój wynik:</p>
+            </section>
+        </seciton>
+        <script src='js/tetris.js'></script>
+        <script src='js/controller.js'></script>
+        <script src='js/render.js'></script>
+    </body>
+</html>
