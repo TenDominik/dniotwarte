@@ -7,7 +7,6 @@
   --platinum:hsl(0, 4%, 91%);
   --xiketic:hsl(275, 24%, 10%);
   --blue:rgb(34, 74, 252);
-  --darkblue:rgb(0, 0, 128);
   --white:hsl(0, 0%, 100%);
   --onyx:hsl(240, 5%, 26%);
   --ff-refault:"Refault",Georgia;
@@ -159,8 +158,8 @@ body{
   top:0;
   left:0;
   width:100%;
-  background: var(--darkblue);
-  box-shadow:0 3px 27px hsla(0,0%,0%,.5);
+  background:rgb(0, 0, 107);
+  box-shadow:0 3px 27px hsla(0,0%,0%,5);
   padding-block:20px;
   z-index:4,
 }
@@ -191,7 +190,6 @@ body{
 .navbar-list{
   position: relative;
   left: 20%;
-  border-top:1px solid hsla(0,0%,100%,.1);
   margin-bottom:30px
 }
 .navbar-link{
@@ -433,8 +431,8 @@ body{
       outline:0
   }
   .navbar-link:is(:hover,:focus)::after{
-      background:var(--raisin-black-2);
-      border-color:var(--blue)
+      background:rgb(0, 0, 211);
+      border-color:var(--blue);
   }
   .overlay{
       display:none
@@ -542,7 +540,7 @@ body{
 
 .karty_h1
 {
-  background-color: var(--darkblue);
+  background-color: rgba(0, 2, 97, 0.75);
   color:white;
   border-radius: 15px;
   margin-top:50px;
@@ -689,7 +687,7 @@ body{
   margin :15px;
   padding:15px;
   color:white;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(100, 0, 0, 0.76);
   border-radius:25px;
 }
 #tournament_prawy h2
@@ -739,7 +737,7 @@ body{
 
 #zarobki h3
 {
-  background-color: var(--darkblue);
+  background-color: rgba(13, 110, 0, 0.747);
   color:white;
   padding:3px;
   border-radius: 5px;
@@ -766,6 +764,8 @@ footer
   height: 100px;
   margin-right: 40px;
 }
+
+
 
 
 /* @keyframes slideInFromLeft {
