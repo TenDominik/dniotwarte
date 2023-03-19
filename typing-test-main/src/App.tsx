@@ -69,18 +69,6 @@ export default function App() {
     return (
         <>
             <Header />
-            <div>
-              <form>
-                <label htmlFor="input-text">Nazwa:   </label>
-                <input
-                  id="input-text"
-                  type="text"
-                  value={text}
-                  ref={searchInput}
-                  onChange={handleTextChange}
-                />
-              </form>
-            </div>
             {showPallet && <CommandPallet setShowPallet={setShowPallet} />}
             {timer ? <Test /> : <React.Fragment><Result /> </React.Fragment> }
             <Footer />

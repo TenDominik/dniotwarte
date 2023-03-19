@@ -7,6 +7,7 @@
   --platinum:hsl(0, 4%, 91%);
   --xiketic:hsl(275, 24%, 10%);
   --blue:rgb(34, 74, 252);
+  --darkblue:rgb(0, 0, 128);
   --white:hsl(0, 0%, 100%);
   --onyx:hsl(240, 5%, 26%);
   --ff-refault:"Refault",Georgia;
@@ -158,7 +159,7 @@ body{
   top:0;
   left:0;
   width:100%;
-  background:hsl(234deg 8% 9%);
+  background: var(--darkblue);
   box-shadow:0 3px 27px hsla(0,0%,0%,.5);
   padding-block:20px;
   z-index:4,
@@ -541,7 +542,7 @@ body{
 
 .karty_h1
 {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: var(--darkblue);
   color:white;
   border-radius: 15px;
   margin-top:50px;
@@ -738,7 +739,7 @@ body{
 
 #zarobki h3
 {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--darkblue);
   color:white;
   padding:3px;
   border-radius: 5px;
